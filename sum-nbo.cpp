@@ -12,7 +12,7 @@ void file_handle(FILE* fp, uint32_t *buf, uint32_t &sum, int argc, char* argv[])
 		}
 
 		uint32_t read = fread(&buf[i - 1], 4, 4, fp);
-		if(read == 0){
+		if(read <= 0){
 			printf("read error\n");
 			exit(0);
 		}
